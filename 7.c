@@ -1,6 +1,6 @@
 #include<stdio.h>
 #include<stdlib.h>
-#define qsize 10
+#define qsize 5
 void main()
 {
 	int ch,item,f,r,c,q[qsize];
@@ -20,7 +20,10 @@ void main()
 				break;
 			case 2: item=delete(&f,q,&c);
 				if(item==0)
+                    {
 					printf("Queue is empty\n");
+					break;
+		}
 				printf("The deleted item is %d",item);
 				break;
 			case 3: display(f,q,c);
@@ -59,7 +62,7 @@ void display(int f,int q[],int c)
 		return;
 	}
 	printf("The contents of the queue are \n");
-	for(i=0;i<c;i++)
+	for(i=1;i<=c;i++)
 	{
 		printf("%d\t",q[f]);
 		f=(f+1)%qsize;
