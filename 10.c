@@ -25,6 +25,8 @@ void main()
 		printf("Press 'n' for next move and 'q' to exit the game \n");
 		printf("Choice: \n");
 		scanf("%c",&ch);
+		if(ch=='q')
+			exit(0);
 		cur=next_turn(cur);
 		whose_turn(cur);
 	}
