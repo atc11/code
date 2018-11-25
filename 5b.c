@@ -1,24 +1,19 @@
 #include<stdio.h>
-
-   void hanoi(int n,char source,char destination,char temp);
-
-   void main()
-   {
-
-       int n;
-       printf("\nenter the no. of disks:\n");
-       scanf("%d",&n);
-       hanoi(n,'t','s','d');
-   }
-   void hanoi(int n,char source,char destination,char temp)
-
+#include<conio.h>
+#include<dos.h>
+void hanoi(int n,char s,char d,char temp)
 {
-
-
-      if(n>0)
-      {
-          hanoi(n-1,source,temp,destination);
-        printf(" \n movedisk %d from %c to %c",n,source,destination);
-        hanoi(n-1,temp,destination,source);
-      }
+    if(n>0)
+    {
+        hanoi(n-1,s,temp,d);
+        printf("\n move disk %d from %c to %c",n,s,d);
+        hanoi(n-1,temp,d,s);
+    }
+}
+void main()
+{
+    int n;
+printf("enter the no of disks :");
+scanf("%d",&n);
+hanoi(n,'s','d','t');
 }
